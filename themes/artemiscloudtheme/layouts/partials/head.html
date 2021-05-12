@@ -22,7 +22,7 @@
   <link rel="icon" href="{{ `favicon.png` | absURL }}" type="image/x-icon">
 
   
-  {{ with .Params.Image }}
+  {{ with .Params.image }}
   <meta property="og:image" content="{{ . | absURL }}" />
   {{ end }}
   {{ template "_internal/opengraph.html" . }}
