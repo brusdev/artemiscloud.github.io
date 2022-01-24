@@ -1,15 +1,47 @@
 {{ define "main" }}
 {{ partial "page-header.html" . }}
-
-<section class="section">
-    <div class="container">
-        <div id="toc" class="well col-md-4 col-sm-6">
-            {{ .TableOfContents }}
-        </div>
-        <h1>{{ .Title }}</h1>
-        {{ .Content }}
+<div class="body" style="display:flex">
+    <div class="nav-container" data-component="artemiscloud-docs" data-version="dev" style="">
+        <aside class="nav">
+            <div class="panels">
+                <div class="nav-panel-menu is-active" data-panel="menu">
+                    {{ with .Site.GetPage "documentation/" }}
+                    <nav class="nav-menu">
+                        {{ range .Params.chapter }}
+                        <ul>
+                            <li class="nav-item" data-depth="0">
+                                {{ $currentUrl := .url}}
+                                <span class="nav-text">{{ .heading }}</span>
+                                {{ range .section }}
+                                <ul>
+                                    <li class="nav-item" data-depth="1">
+                                        <a class="nav-link" href="/documentation/{{ $currentUrl }}#{{  .heading }}">{{ .heading }}</a> {{.title}}
+                                    </li>
+                                </ul>
+                                {{ end }}
+                        </ul>
+                        {{ end }}
+                    </nav>
+                    {{ end }}
+                </div>
+            </div>
+        </aside>
     </div>
-</section>
+    <main>
+        <div class="content" style="display: flex">
+            <article class="doc">
+                <div class="sect1">
+                    {{ .Content }}
+                    {{ range .Data.Pages.ByParam "level" }}
+                    <section id="{{ .Title }}">
+                    {{ .Content }}
+                    </section>
+                    {{ end }}
+                </div>
+            </article>
+        </div>
+    </main>
+</div>
 
 
 <!-- call to action -->

@@ -1,0 +1,73 @@
+<!-- sidebar start -->
+<!--<aside>-->
+   <!-- <ul>-->
+<div class="nav-container" data-component="artemiscloud-docs" data-version="dev">
+    <aside class="nav">
+        <div class="panels">
+            <div class="nav-panel-menu is-active" data-panel="menu">
+        {{ $currentPage := . }}
+       <!-- {{ range .Paginator.Pages }}
+            {{ .Title }} {{ $currentPage }} {{.URL}} <p></p>
+        {{ end }}-->
+
+        {{ with .Site.GetPage "documentation/" }}
+            <div class="panels">
+                <div class="nav-panel-menu is-active" data-panel="menu">
+                    <nav class="nav-menu">
+                        {{ range .Params.chapter }}
+                            <ul>
+                                <li class="nav-item" data-depth="0">
+                                    <span class="nav-text">{{ .title }}</span>
+                                    {{ range .section }}
+                                    <ul>
+                                        <li class="nav-item" data-depth="1">
+                                            <a class="nav-link" href="{{ .location }}">{{ .location }}</a>
+                                        </li>
+                                    </ul>
+                                    {{ end }}
+                            </ul>
+                        <ul>{{ .ContentData }}</ul>
+                        {{ end }}
+                    </nav>
+                </div>
+            </div>
+            {{ .Params.book }}
+        {{ end }}
+            </div>
+        </div>
+    </aside>
+</div>
+<!--
+        {{ range .Site.Menus.main }}
+        {{ if .HasChildren }}
+        <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+        <a href="#">
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+        </a>
+        </li>
+        <ul class="sub-menu">
+            {{ range .Children }}
+            <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+            <a href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ else }}
+        <li>
+            <a href="{{ .URL }}">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+            </a>
+        </li>
+        {{ end }}
+        {{ end }}
+        <li>
+            <a href="#" target="_blank">Hardcoded Link 1</a>
+        </li>
+        <li>
+            <a href="#" target="_blank">Hardcoded Link 2</a>
+        </li>
+    </ul>-->
+<!--
+</aside>-->
