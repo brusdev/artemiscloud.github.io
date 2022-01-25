@@ -1,8 +1,8 @@
 {{ define "main" }}
 {{ partial "page-header.html" . }}
 <div class="body" style="display:flex">
-    <div class="nav-container" data-component="artemiscloud-docs" data-version="dev" style="">
-        <aside class="nav">
+    <div class="nav-container" data-component="artemiscloud-docs" data-version="dev" >
+        <aside class="nav" style="font-size: smaller;width: 300px">
             {{ $toc := .TableOfContents }}
             {{ $file := .File.TranslationBaseName }}
             <ul>
@@ -18,32 +18,10 @@
             {{ end }}
             </ul>
             {{ end }}
-           <!-- <div class="panels">
-                <div class="nav-panel-menu is-active" data-panel="menu">
-                    {{ with .Site.GetPage "documentation/" }}
-                    <nav class="nav-menu">
-                        {{ range .Params.chapter }}
-                        <ul>
-                            <li class="nav-item" data-depth="0">
-                                {{ $currentUrl := .url}}
-                                <span class="nav-text">{{ .heading }}</span>
-                                {{ range .section }}
-                                <ul>
-                                    <li class="nav-item" data-depth="1">
-                                        <a class="nav-link" href="/documentation/{{ $currentUrl }}#{{  .heading }}">{{ .heading }}</a> {{.title}}
-                                    </li>
-                                </ul>
-                                {{ end }}
-                        </ul>
-                        {{ end }}
-                    </nav>
-                    {{ end }}
-                </div>
-            </div>-->
         </aside>
     </div>
     <main>
-        <div class="content" style="display: flex">
+        <div class="content" style="display: flex;padding-right: 20%;;padding-left: 10%;height: 700px;overflow-y : scroll;">
             <article class="doc">
                 <div class="sect1">
                     {{ .Content }}
@@ -57,10 +35,5 @@
         </div>
     </main>
 </div>
-
-
-<!-- call to action -->
-
-<!-- /call to action -->
 
 {{ end }}
