@@ -1,6 +1,6 @@
 <!doctype html><html lang=en-us><head>
 <meta charset=utf-8>
-<title>ArtemisCloud Documentation</title>
+<title>Reference</title>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5">
 <meta name=description content="ArtemisCloud.io is a collection of container images that provide a way to deploy the Apache ActiveMQ Artemis Broker on Kubernetes.">
 <meta name=author content="Themefisher">
@@ -12,10 +12,10 @@
 <link rel="shortcut icon" href=/favicon.png type=image/x-icon>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <meta property="og:image" content="https://artemiscloud.io/favicon.png">
-<meta property="og:title" content="ArtemisCloud Documentation">
-<meta property="og:description" content="ArtemisCloud.io is a collection of container images that provide a way to deploy the Apache ActiveMQ Artemis Broker on Kubernetes.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="/documentation/">
+<meta property="og:title" content="Reference">
+<meta property="og:description" content="Custom Resource configuration reference A Custom Resource Definition (CRD) is a schema of configuration items for a custom Kubernetes object deployed with an Operator.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/documentation/reference/custom_resource_reference/"><meta property="article:section" content="documentation">
 </head><body>
 <header class=navigation>
 <div class=container>
@@ -49,67 +49,23 @@
 </header>
 <section class="section pb-0">
 <div class="container text-center">
-<h1 class=display-3>ArtemisCloud Documentation</h1>
+<h1 class=display-3>Reference</h1>
 </div>
 </section>
-<div class=body style=display:flex>
-<div class=nav-container data-component=artemiscloud-docs data-version=dev>
-<aside class=nav>
-<div class=panels>
-<div class="nav-panel-menu is-active" data-panel=menu>
-<nav class=nav-menu>
-<ul>
-<li class=nav-item data-depth=0>
-<span class=nav-text>Introduction</span>
-<ul>
-<li class=nav-item data-depth=1>
-<a class=nav-link href=/documentation/introduction#Welcome>Welcome</a>
-</li>
-</ul>
-</ul>
-<ul>
-<li class=nav-item data-depth=0>
-<span class=nav-text>The Broker Operator</span>
-<ul>
-<li class=nav-item data-depth=1>
-<a class=nav-link href=/documentation/operator#Overview>Overview</a>
-</li>
-</ul>
-<ul>
-<li class=nav-item data-depth=1>
-<a class=nav-link href=/documentation/operator#Installing%20The%20Operator>Installing The Operator</a>
-</li>
-</ul>
-</ul>
-<ul>
-<li class=nav-item data-depth=0>
-<span class=nav-text>Reference</span>
-<ul>
-<li class=nav-item data-depth=1>
-<a class=nav-link href=/documentation/reference#Custom%20Resource%20Configuration%20Reference>Custom Resource Configuration Reference</a>
-</li>
-</ul>
-</ul>
-</nav>
+<section class=section>
+<div class=container>
+<div class=row>
+<div class="col-lg-10 mx-auto">
+<div class=content><h2 id=custom-resource-configuration-reference>Custom Resource configuration reference</h2>
+<p>A Custom Resource Definition (CRD) is a schema of configuration items for a custom Kubernetes object deployed with an Operator. By deploying a corresponding Custom Resource (CR) instance, you specify values for configuration items shown in the CRD.</p>
+<p>The following sub-sections detail the configuration items that you can set in Custom Resource instances based on the main broker and addressing CRDs.</p>
+<h3 id=broker-custom-resource-configuration-reference>Broker Custom Resource configuration reference</h3>
+<p>A CR instance based on the main broker CRD enables you to configure brokers for deployment in a Kubernetes project. The following table describes the items that you can configure in the CR instance.</p>
 </div>
 </div>
-</aside>
 </div>
-<main>
-<div class=content style=display:flex>
-<article class=doc>
-<div class=sect1>
-<section id=Introduction>
+</div>
 </section>
-<section id=Reference>
-</section>
-<section id="The Broker Operator">
-</section>
-</div>
-</article>
-</div>
-</main>
-</div>
 <footer class="section pb-0">
 <div class=container>
 <div class=row>
