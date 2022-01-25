@@ -3,7 +3,8 @@
 <div class="body" style="display:flex">
     <div class="nav-container" data-component="artemiscloud-docs" data-version="dev" style="">
         <aside class="nav">
-            <div class="panels">
+            {{ .TableOfContents }}
+           <!-- <div class="panels">
                 <div class="nav-panel-menu is-active" data-panel="menu">
                     {{ with .Site.GetPage "documentation/" }}
                     <nav class="nav-menu">
@@ -24,7 +25,7 @@
                     </nav>
                     {{ end }}
                 </div>
-            </div>
+            </div>-->
         </aside>
     </div>
     <main>
@@ -32,7 +33,7 @@
             <article class="doc">
                 <div class="sect1">
                     {{ .Content }}
-                    {{ range .Data.Pages.ByParam "level" }}
+                    {{ range .Data.Pages }}
                     <section id="{{ .Title }}">
                     {{ .Content }}
                     </section>
