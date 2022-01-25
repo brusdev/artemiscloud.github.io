@@ -1,8 +1,3 @@
----
-title: "Reference"
-level: 1
----
-# fsdfsfs
 
 ## Custom Resource configuration reference
 A Custom Resource Definition (CRD) is a schema of configuration items for a custom Kubernetes object deployed with an Operator. By deploying a corresponding Custom Resource (CR) instance, you specify values for configuration items shown in the CRD.

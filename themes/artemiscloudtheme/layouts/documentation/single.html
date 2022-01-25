@@ -3,7 +3,21 @@
 <div class="body" style="display:flex">
     <div class="nav-container" data-component="artemiscloud-docs" data-version="dev" style="">
         <aside class="nav">
-            {{ .TableOfContents }}
+            {{ $toc := .TableOfContents }}
+            {{ $file := .File.TranslationBaseName }}
+            <ul>
+            {{ with .Site.GetPage "documentation/" }}
+            {{ range .Params.chapter }}
+                <li class="nav-item" data-depth="0">
+                    {{ $currentUrl := .url}}
+                    <span class="nav-text"><a href="/documentation/{{ .url }}">{{ .heading }}<a/></span></li>
+                {{ if eq .url $file}}
+                    {{ $toc }}
+                {{  end }}
+
+            {{ end }}
+            </ul>
+            {{ end }}
            <!-- <div class="panels">
                 <div class="nav-panel-menu is-active" data-panel="menu">
                     {{ with .Site.GetPage "documentation/" }}

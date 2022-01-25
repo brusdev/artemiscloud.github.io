@@ -1,4 +1,3 @@
-# foo bar 
 
 ## Overview of the ArtemisCloud Operator Custom Resource Definitions
 
