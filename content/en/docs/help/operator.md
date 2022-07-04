@@ -548,7 +548,7 @@ spec:
 The liveness queue must exist and be deployed the broker and be of type anycast with acceptable configuration, something like:
 
 ```yaml
-apiVersion: broker.amq.io/v1beta1
+apiVersion: {{< docs-param ACTIVEMQ_ARTEMIS_ADDRESS_API_VERSION >}}
 kind: ActiveMQArtemisAddress
 metadata:
   name: livenessqueue
@@ -576,9 +576,8 @@ The script will try to establish a tcp connection to each port configured in the
 ###  Tolerations
 
 It is possible to configure tolerations on tge deployed broker image . An example of a toleration would be something like:
-
 ```yaml
-apiVersion: broker.amq.io/v1beta1
+apiVersion: {{< docs-param ACTIVEMQ_ARTEMIS_API_VERSION >}}
 kind: ActiveMQArtemis
 metadata:
   name: broker
@@ -600,7 +599,7 @@ It is possible to configure Affinity for the container pods, An example of this 
 
 
 ```yaml
-apiVersion: broker.amq.io/v1beta1
+apiVersion: {{< docs-param ACTIVEMQ_ARTEMIS_API_VERSION >}}
 kind: ActiveMQArtemis
 metadata:
   name: broker
@@ -630,7 +629,7 @@ Labels can be added to the pods by defining them like so:
 
 
 ```yaml
-apiVersion: broker.amq.io/v1beta1
+apiVersion: {{< docs-param ACTIVEMQ_ARTEMIS_API_VERSION >}}
 kind: ActiveMQArtemis
 metadata:
   name: broker
@@ -649,7 +648,7 @@ spec:
 It is also possible to configure a Node Selector for the container pods, this is configured like:
 
 ```yaml
-apiVersion: broker.amq.io/v1beta1
+apiVersion: {{< docs-param ACTIVEMQ_ARTEMIS_API_VERSION >}}
 kind: ActiveMQArtemis
 metadata:
   name: broker
