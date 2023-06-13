@@ -23,12 +23,12 @@ because the CRD gets exposed automatically through Kubernetes.
 
 The following CRD's are available for the Operator and can be found in the Operator Repository under *config/crd/bases/*
 
-| CRD                 | Description                                                    | 
-| :---                |    :----:                                                      |  
-| **Main broker CRD** | Create and configure a broker deployment                       | 
-| **Address CRD**     | Create addresses and queues for a broker deployment            |
-| **Scaledown CRD**   | Creates a Scaledown Controller for message migration           | 
-| **Security CRD**    | Configure the security and authentication method of the Broker |
+| CRD                 | Description                                                    |           Name            | Shortname  |
+| :---                | :----:                                                         | :----:                    | :---:      |
+| **Main broker CRD** | Create and configure a broker deployment                       |     activemqartemises     |     aa     |
+| **Address CRD**     | Create addresses and queues for a broker deployment            | activemqartemisaddresses  |    aaa     |
+| **Scaledown CRD**   | Creates a Scaledown Controller for message migration           | activemqartemisscaledowns |    aad     |
+| **Security CRD**    | Configure the security and authentication method of the Broker | activemqartemissecurities |    aas     |
 
 ### Additional resources
 
@@ -826,7 +826,6 @@ For example, here we have two instances of the PropertiesLoginModule, one that r
 				// a custom LoginModule that will reload from this secret
 				org.apache.activemq.artemis.spi.core.security.jaas.PropertiesLoginModule sufficient
 					reload=true
-					// these files will be provided by the secret
 					org.apache.activemq.jaas.properties.user="users.properties"
 					org.apache.activemq.jaas.properties.role="roles.properties";
 
